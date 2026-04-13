@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual env
+.venv/
+
+# VS Code
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Artifacts
+artifacts/models/*
+artifacts/metrics/*
+artifacts/figures/*
+artifacts/predictions/*
+
+# Keep folders
+!artifacts/models/.gitkeep
+!artifacts/metrics/.gitkeep
+!artifacts/figures/.gitkeep
+!artifacts/predictions/.gitkeep
+
+# Data
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/samples/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
