@@ -33,12 +33,12 @@ if uploaded_file is not None:
 
     with col1:
         st.subheader("Original (preprocessed display)")
-        st.image(result["display_image"], width="stretch")
+        st.image(result["display_image"], use_container_width=True)
 
 
     with col2:
         st.subheader("Grad-CAM Overlay")
-        st.image(result["gradcam_overlay"], width="stretch")
+        st.image(result["gradcam_overlay"], use_container_width=True)
 
     st.subheader("Prediction")
     st.metric(
