@@ -18,12 +18,14 @@ artifacts/models/*
 artifacts/metrics/*
 artifacts/figures/*
 artifacts/predictions/*
+artifacts/plots/*
 
 # Keep folders
 !artifacts/models/.gitkeep
 !artifacts/metrics/.gitkeep
 !artifacts/figures/.gitkeep
 !artifacts/predictions/.gitkeep
+!artifacts/plots/.gitkeep
 
 # Data
 data/raw/*
