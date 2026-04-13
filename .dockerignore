@@ -1,0 +1,17 @@
+.git
+.gitignore
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+.ipynb_checkpoints
+.vscode
+
+data/raw
+notebooks
+tests
+
+artifacts/figures/gradcam_gallery
+artifacts/figures/gradcam_samples

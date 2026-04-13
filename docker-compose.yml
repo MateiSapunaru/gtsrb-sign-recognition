@@ -1,0 +1,10 @@
+services:
+  gtsrb-app:
+    build: .
+    container_name: gtsrb-streamlit-app
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./artifacts:/app/artifacts
+      - ./configs:/app/configs
+    restart: unless-stopped

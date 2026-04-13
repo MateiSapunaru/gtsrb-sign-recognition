@@ -1,0 +1,44 @@
+project:
+  name: gtsrb-sign-recognition
+  seed: 42
+
+data:
+  raw_dir: data/raw
+  train_dir: data/raw/Train
+  test_dir: data/raw/Test
+  test_csv: data/raw/Test/Test.csv
+
+  processed_dir: data/processed
+  train_csv: data/processed/train.csv
+  val_csv: data/processed/val.csv
+  test_processed_csv: data/processed/test.csv
+
+  image_size: 224
+  num_classes: 43
+  val_size: 0.2
+
+training:
+  batch_size: 64
+  num_workers: 4
+  epochs_head: 5
+  epochs_finetune: 10
+  learning_rate_head: 0.001
+  learning_rate_finetune: 0.0001
+  weight_decay: 0.0001
+  label_smoothing: 0.0
+
+model:
+  name: efficientnet_b0
+  pretrained: true
+  dropout: 0.3
+
+inference:
+  top_k: 5
+  confidence_threshold: 0.5
+
+artifacts:
+  model_dir: artifacts/models
+  metrics_dir: artifacts/metrics
+  figures_dir: artifacts/figures
+  predictions_dir: artifacts/predictions
+  best_model_name: best_model.pt
