@@ -33,11 +33,11 @@ else:
 
 if cm_path.exists():
     st.subheader("Confusion Matrix")
-    st.image(str(cm_path), width="stretch")
+    st.image(str(cm_path), use_container_width=True)
 
 if pca_path.exists():
     st.subheader("Per-Class Accuracy")
-    st.image(str(pca_path), width="stretch")
+    st.image(str(pca_path), use_container_width=True)
 
 if history_path.exists():
     st.success("Training history found. We can add full training curves next.")
