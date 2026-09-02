@@ -58,6 +58,9 @@ app/
 ├── pages/
 configs/
 artifacts/
+firmware/
+├── CameraWebServer.ino
+├── esp32test.py
 ```
 
 ---
@@ -264,17 +267,26 @@ The ESP32 does not run the machine learning model. It acts only as a streaming d
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/MateiSapunaru/gtsrb-sign-recognition.git
+cd gtsrb-sign-recognition
 ```
 
 ---
 
 ### 2. Install Dependencies
 
+By default, `poetry install` pulls PyTorch from the CUDA 12.8 wheel index (see `pyproject.toml`), which requires an NVIDIA GPU. If you don't have one, install the CPU-only build instead:
+
 ```bash
 poetry install
 poetry shell
+```
+
+**CPU-only setup (no NVIDIA GPU):**
+
+```bash
+poetry install --no-root
+poetry run pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
 ```
 
 ---
@@ -282,7 +294,7 @@ poetry shell
 ### 3. Run the Application
 
 ```bash
-streamlit run app/main.py
+streamlit run app/streamlit_app.py
 ```
 
 Open:
@@ -295,7 +307,7 @@ http://localhost:8501
 
 ### 4. Run ESP32 Stream (Optional)
 
-1. Flash the ESP32-CAM with `CameraWebServer.ino`
+1. Flash the ESP32-CAM with `firmware/CameraWebServer.ino`
 2. Connect it to WiFi
 3. Get its IP address
 
@@ -366,5 +378,11 @@ This project demonstrates a complete **end-to-end AI system**, combining:
 * embedded hardware integration
 
 It reflects a realistic pipeline applicable to intelligent transportation and edge AI systems.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
 
 ---
