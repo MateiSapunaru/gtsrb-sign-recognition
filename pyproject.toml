@@ -52,3 +52,6 @@ priority = "explicit"
 torch = {source = "pytorch-cu128"}
 torchvision = {source = "pytorch-cu128"}
 torchaudio = {source = "pytorch-cu128"}
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
